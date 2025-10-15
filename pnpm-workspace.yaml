@@ -1,0 +1,11 @@
+packages:
+  - packages/*
+
+ignoredBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - better-sqlite3
+  - prisma
+
+onlyBuiltDependencies:
+  - aws-sdk

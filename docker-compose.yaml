@@ -1,0 +1,23 @@
+name: app
+
+services:
+  postgres:
+    image: "postgres:16.4"
+    ports:
+      - "5434:5432"
+    volumes:
+      - "./.sst/storage/postgres:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=local
+  postgres_test:
+    image: "postgres:16.4"
+    ports:
+      - "5435:5432"
+    volumes:
+      - "./.sst/storage/postgres_test:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=test

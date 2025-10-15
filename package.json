@@ -1,0 +1,31 @@
+{
+  "name": "@app/root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sst dev",
+    "deploy": "sst deploy",
+    "remove": "sst remove",
+    "db:local:up": "docker-compose up -d",
+    "db:local:down": "docker-compose down",
+    "db:auth:generate": "sst shell --target Shell -- pnpm --filter @app/api run db:auth:generate",
+    "db:generate": "sst shell --target Shell -- pnpm --filter @app/api run db:generate",
+    "db:migrate": "sst shell --target Shell -- pnpm --filter @app/api run db:migrate",
+    "db:push": "sst shell --target Shell -- pnpm --filter @app/api run db:push",
+    "db:studio": "sst shell --target Shell -- pnpm --filter @app/api run db:studio",
+    "db:seed": "sst shell --target Shell -- pnpm --filter @app/api run db:seed"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.155",
+    "sst": "3.17.14",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "hono": "4.9.10",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
